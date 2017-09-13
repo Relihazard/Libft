@@ -1,9 +1,9 @@
 NAME			= libft.a
 CC				= gcc
 CFLAGS			= -Wall -Wextra -Werror
-LDFLAGS			=
-AR				= ar rc
-RANLIB			= ranlib
+LD				= ar
+LDFLAGS			= rc
+INDEX			= ranlib
 SRCS_DIR		= ./srcs
 INCLUDES_DIR	= ./includes
 OBJS_DIR 		= ./objs
@@ -26,20 +26,22 @@ all: welcome_msg $(CREATED_OBJS)
 	@$(MKDIR) $(LIB_DIR)
 	@echo "===================================================================="
 	@echo "Making the libft"
-	@$(AR) $(CREATED_LIB) $(CREATED_OBJS)
+	@$(LD) $(LDFLAGS) $(CREATED_LIB) $(CREATED_OBJS)
 	@echo "===================================================================="
 	@sleep 1
 	@echo "Done"
 	@echo "===================================================================="
 	@echo "Indexing the library"
-	@$(RANLIB) $(CREATED_LIB)
+	@$(INDEX) $(CREATED_LIB)
 	@echo "===================================================================="
 	@sleep 1
 	@echo "Done"
 
 welcome_msg:
 	@echo "===================================================================="
-	@echo "                            LIBFT                                   "
+	@echo "\n"
+	@echo "                             LIBFT                                  "
+	@echo "\n"
 	@echo "===================================================================="
 	@echo "This Makefile will compile all the sources files and link all the   "
 	@echo "objects created to make the ft library.                             "
