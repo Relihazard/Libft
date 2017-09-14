@@ -25,16 +25,16 @@ $(NAME): all
 all: welcome_msg $(CREATED_OBJS)
 	@$(MKDIR) $(LIB_DIR)
 	@echo "===================================================================="
-	@echo "Making the libft"
+	@echo "Making the library"
 	@$(LD) $(LDFLAGS) $(CREATED_LIB) $(CREATED_OBJS)
 	@echo "===================================================================="
-	@sleep 1
+	@sleep 0.1
 	@echo "Done"
 	@echo "===================================================================="
 	@echo "Indexing the library"
 	@$(INDEX) $(CREATED_LIB)
 	@echo "===================================================================="
-	@sleep 1
+	@sleep 0.1
 	@echo "Done"
 
 welcome_msg:
@@ -46,7 +46,8 @@ welcome_msg:
 	@echo "This Makefile will compile all the sources files and link all the   "
 	@echo "objects created to make the ft library.                             "
 	@echo "===================================================================="
-	@sleep 1
+	@read -n 1 -s -r -p "Press any key to continue"
+	@echo "\n"
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 	@$(MKDIR) $(OBJS_DIR)
@@ -60,7 +61,7 @@ $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 
 clean:
 	@echo "===================================================================="
-	@echo "Cleaning the objects and the directory"
+	@echo "Cleaning the objects and removing the directory"
 	@$(RM) $(CREATED_OBJS)
 	@$(RMDIR) $(OBJS_DIR)
 	@echo "===================================================================="
@@ -69,7 +70,7 @@ clean:
 
 fclean: clean
 	@echo "===================================================================="
-	@echo "Cleaning the library and the directory"
+	@echo "Cleaning the library and removing the directory"
 	@$(RM) $(NAME)
 	@$(RMDIR) $(LIB_DIR)
 	@echo "===================================================================="
