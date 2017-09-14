@@ -7,15 +7,11 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 
 	dest = (unsigned char *)dst;
 	source = (const unsigned char *)src;
-	if (dest && source)
+	while (n--)
 	{
-		while (n != 0)
-		{
-			*dest++ = *source++;
-			if (*source == (unsigned char)c)
-				return (dest + 1);
-			n--;
-		}
+		*dest++ = *source++;
+		if (*source == (unsigned char)c)
+			return (dest);
 	}
 	return (NULL);
 }
