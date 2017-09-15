@@ -4,7 +4,7 @@
 /*
 ** Include headers for the typedefs, macros and standard functions
 ** stdlib.h for the functions malloc and free
-** string.h for macro NULL and the typedef size_t
+** string.h for the macro NULL and the typedef size_t
 ** unistd.h for the function write
 */
 # include <stdlib.h>
