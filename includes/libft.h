@@ -1,7 +1,8 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-/* Include headers for the typedefs, macros and standard functions
+/*
+** Include headers for the typedefs, macros and standard functions
 ** stdlib.h for the functions malloc and free
 ** string.h for macro NULL and the typedef size_t
 ** unistd.h for the function write
@@ -10,7 +11,8 @@
 # include <string.h>
 # include <unistd.h>
 
-/* Struct for a linked list
+/*
+** Struct for a linked list
 ** @member content The data contained inside the link
 ** @member content_size The size of the data contained in the link
 ** @member next The adress of the next link or NULL if it's the last
@@ -22,7 +24,8 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-/* Functions already existing in the libc, rewrited for this library
+/*
+** Functions already existing in the libc, rewrited for this library
 ** @see man function (without the ft_)
 */
 void				*ft_memset(void *b, int c, size_t len);
