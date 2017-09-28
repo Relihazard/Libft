@@ -1,4 +1,4 @@
-NAME			= libft.a
+NAME			= libft
 CC				= gcc
 CFLAGS			= -Wall -Wextra -Werror
 LD				= ar
@@ -21,7 +21,7 @@ SRCS			= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_lstmap.c ft_isspace.c
 OBJS			= $(SRCS:.c=.o)
 CREATED_OBJS	= $(addprefix $(OBJS_DIR)/, $(OBJS))
-CREATED_LIB		= $(addprefix $(LIB_DIR)/, $(NAME))
+CREATED_LIB		= $(addprefix $(LIB_DIR)/, $(NAME)).a
 MKDIR			= /bin/mkdir -p
 RM				= /bin/rm -f
 RMDIR			= /bin/rm -rf
@@ -59,7 +59,7 @@ $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 	@$(MKDIR) $(OBJS_DIR)
 	@echo "===================================================================="
 	@echo "Compiling $< to $@"
-	@$(CC) $(CFLAGS) -I $(INCLUDES_DIR) -c $< -o $@
+	@$(CC) $(CFLAGS) -I$(INCLUDES_DIR) -c $< -o $@
 	@echo "===================================================================="
 	@sleep 0.1
 	@echo "Done"
