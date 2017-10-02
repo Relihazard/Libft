@@ -2,9 +2,9 @@
 
 /*
 ** Calculate the lenght of an integer and his weight
-** @param n The integer which you want to calculate
-** @param len The adress of lenght of the integer
-** @param weight The adress of the weight of the integer
+** \param n The integer which you want to calculate
+** \param len The adress of lenght of the integer
+** \param weight The adress of the weight of the integer
 */
 static void	ft_intlen(int n, size_t *len, int *weight)
 {
@@ -25,8 +25,8 @@ static void	ft_intlen(int n, size_t *len, int *weight)
 /*
 ** Allocate (with malloc) and converts the integer passed in the parameters to
 ** a string.
-** @param n The integer to convert
-** @return The string representing the integer or NULL if the allocation failed
+** \param n The integer to convert
+** \return The string representing the integer or NULL if the allocation failed
 */
 char		*ft_itoa(int n)
 {

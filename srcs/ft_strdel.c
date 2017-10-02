@@ -2,7 +2,7 @@
 
 /*
 ** Takes the adress of a string and free the memory and puts the pointer to NULL
-** @param as The adress of the string
+** \param as The adress of the string
 */
 void	ft_strdel(char **as)
 {

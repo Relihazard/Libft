@@ -13,9 +13,9 @@
 
 /*
 ** Struct for a linked list
-** @member content The data contained inside the link
-** @member content_size The size of the data contained in the link
-** @member next The adress of the next link or NULL if it's the last
+** \member content The data contained inside the link
+** \member content_size The size of the data contained in the link
+** \member next The adress of the next link or NULL if it's the last
 */
 typedef struct		s_list
 {
@@ -26,7 +26,7 @@ typedef struct		s_list
 
 /*
 ** Functions already existing in the libc, rewrited for this library
-** @see man function (without the ft_)
+** \see man function (without the ft_)
 */
 char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strcpy(char *dst, const char *src);

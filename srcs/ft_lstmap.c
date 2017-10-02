@@ -4,9 +4,9 @@
 ** Iterate through the list and applies the function f to each link.
 ** It creates a new list (with malloc) resulting in the succesives applications.
 ** If an allocation fails, the fuction returns NULL.
-** @param lst Pointer to the first link of the list
-** @param f Adress of a function to apply to each link
-** @return The new list or NULL if an allocation fails
+** \param lst Pointer to the first link of the list
+** \param f Adress of a function to apply to each link
+** \return The new list or NULL if an allocation fails
 */
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
