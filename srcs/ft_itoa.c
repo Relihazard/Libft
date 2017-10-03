@@ -2,7 +2,7 @@
 
 /*
 ** Calculate the lenght of an integer and his weight
-** \param n The integer which you want to calculate
+** \param n The integer to calculate the length and weight
 ** \param len The adress of lenght of the integer
 ** \param weight The adress of the weight of the integer
 */
