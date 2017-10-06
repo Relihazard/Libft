@@ -23,9 +23,9 @@ SRCS			= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 OBJS			= $(SRCS:.c=.o)
 CREATED_OBJS	= $(addprefix $(OBJS_DIR)/, $(OBJS))
 CREATED_LIB		= $(addprefix $(LIB_DIR)/, $(NAME)).a
-MKDIR			= /bin/mkdir -p
-RM				= /bin/rm -f
-RMDIR			= /bin/rm -rf
+MKDIR			= mkdir -p
+RM				= rm -f
+RMDIR			= rm -rf
 
 $(NAME): all
 
