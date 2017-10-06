@@ -1,5 +1,6 @@
 #include "libft.h"
 
+/* TODO: Create documentation */
 char	*ft_strstr(const char *haystack, const char *needle)
 {
 	size_t	needle_len;
