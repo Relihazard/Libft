@@ -1,5 +1,0 @@
-# Exclude binary files
-/objs/*
-/lib/*
-*.o
-*.a
