@@ -2,12 +2,6 @@
 # define LIBFT_H
 
 /*
-** Macros for booleans
-*/
-# define FALSE 0
-# define TRUE 1
-
-/*
 ** Include headers for the typedefs, macros and standard functions
 ** stdlib.h for the functions malloc and free
 ** string.h for the macro NULL and the typedef size_t
