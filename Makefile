@@ -1,3 +1,4 @@
+SHELL			:= /bin/bash
 NAME			= libft
 CC				= gcc
 CFLAGS			= -Wall -Wextra -Werror
