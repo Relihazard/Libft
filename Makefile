@@ -3,12 +3,12 @@ SHELL		:= /bin/bash
 #### Start of system configuration section ####
 
 NAME		:= libft
-prefix		:= .
-exec_prefix	:= $(prefix)
-srcdir		:= $(exec_prefix)/src
-includedir	:= $(exec_prefix)/include
-objdir		:= $(exec_prefix)/obj
-libdir		:= $(exec_prefix)/lib
+PREFIX		:= .
+EXEC_PREFIX	:= $(PREFIX)
+SRCDIR		:= $(EXEC_PREFIX)/src
+INCLUDEDIR	:= $(EXEC_PREFIX)/include
+OBJDIR		:= $(EXEC_PREFIX)/obj
+LIBDIR		:= $(EXEC_PREFIX)/lib
 CC			:= gcc
 CFLAGS		:= -Wall -Wextra -Werror
 AR			:= ar
@@ -17,7 +17,7 @@ RANLIB		:= ranlib
 
 #### End of system configuration section ####
 
-#### Start of sources and objects definition section ####
+#### Start of files definition section ####
 
 SRCS_C		:= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_memchr.c ft_memcmp.c ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c \
@@ -30,11 +30,10 @@ SRCS_C		:= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_putnbr.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 	ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c \
 	ft_lstmap.c ft_isspace.c
-SRCS		:= $(addprefix $(srcdir)/, $(SRCS_C))
-OBJS		:= $(addprefix $(objdir)/, $(notdir $(SRCS:.c=.o)))
-LIB			:= $(libdir)/$(NAME).a
+SRCS		:= $(addprefix $(SRCDIR)/, $(SRCS_C))
+OBJS		:= $(addprefix $(OBJDIR)/, $(notdir $(SRCS:.c=.o)))
 
-#### End of sources and objects definition section ####
+#### End of files definition section ####
 
 #### Start of rules section ####
 
@@ -43,24 +42,24 @@ $(NAME): all
 
 .PHONY: all
 all: makedir $(OBJS)
-	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
-	$(RANLIB) $(LIB)
+	$(AR) $(ARFLAGS) $(LIBDIR)/$(NAME).a $(OBJS)
+	$(RANLIB) $(LIBDIR)/$(NAME).a
 
 .PHONY: makedir
 makedir:
-	@mkdir -p $(objdir)
-	@mkdir -p $(libdir)
+	mkdir -p $(OBJDIR)
+	mkdir -p $(LIBDIR)
 
-$(objdir)/%.o: $(srcdir)/%.c
-	$(CC) $(CFLAGS) -I$(includedir) -c $< -o $@
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	$(CC) $(CFLAGS) -I$(INCLUDEDIR) -c $< -o $@
 
 .PHONY: clean
 clean:
-	rm -rf $(objdir)
+	rm -rf $(OBJDIR)
 
 .PHONY: fclean
 fclean: clean
-	rm -rf $(libdir)
+	rm -rf $(LIBDIR)
 
 .PHONY: re
 re: fclean all
