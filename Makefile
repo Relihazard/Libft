@@ -1,15 +1,25 @@
-SHELL			:= /bin/bash
-NAME			= libft
-CC				= gcc
-CFLAGS			= -Wall -Wextra -Werror
-LD				= ar
-LDFLAGS			= rc
-INDEX			= ranlib
-SRCS_DIR		= ./srcs
-INCLUDES_DIR	= ./includes
-OBJS_DIR 		= ./objs
-LIB_DIR			= ./lib
-SRCS			= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
+SHELL		:= /bin/bash
+
+#### Start of system configuration section ####
+
+NAME		:= libft
+prefix		:= .
+exec_prefix	:= $(prefix)
+srcdir		:= $(exec_prefix)/src
+includedir	:= $(exec_prefix)/include
+objdir		:= $(exec_prefix)/obj
+libdir		:= $(exec_prefix)/lib
+CC			:= gcc
+CFLAGS		:= -Wall -Wextra -Werror
+AR			:= ar
+ARFLAGS		:= rc
+RANLIB		:= ranlib
+
+#### End of system configuration section ####
+
+#### Start of sources and objects definition section ####
+
+SRCS_C		:= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_memchr.c ft_memcmp.c ft_strlen.c ft_strdup.c ft_strcpy.c ft_strncpy.c \
 	ft_strcat.c ft_strncat.c ft_strlcat.c ft_strstr.c ft_strnstr.c ft_strcmp.c \
 	ft_strncmp.c ft_atoi.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
@@ -20,68 +30,39 @@ SRCS			= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_putnbr.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 	ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c \
 	ft_lstmap.c ft_isspace.c
-OBJS			= $(SRCS:.c=.o)
-CREATED_OBJS	= $(addprefix $(OBJS_DIR)/, $(OBJS))
-CREATED_LIB		= $(addprefix $(LIB_DIR)/, $(NAME)).a
-MKDIR			= mkdir -p
-RM				= rm -f
-RMDIR			= rm -rf
+SRCS		:= $(addprefix $(srcdir)/, $(SRCS_C))
+OBJS		:= $(addprefix $(objdir)/, $(notdir $(SRCS:.c=.o)))
+LIB			:= $(libdir)/$(NAME).a
 
+#### End of sources and objects definition section ####
+
+#### Start of rules section ####
+
+.PHONY: $(NAME)
 $(NAME): all
 
-all: welcome_msg $(CREATED_OBJS)
-	@$(MKDIR) $(LIB_DIR)
-	@echo "===================================================================="
-	@echo "Making the library"
-	@$(LD) $(LDFLAGS) $(CREATED_LIB) $(CREATED_OBJS)
-	@echo "===================================================================="
-	@sleep 0.1
-	@echo "Done"
-	@echo "===================================================================="
-	@echo "Indexing the library"
-	@$(INDEX) $(CREATED_LIB)
-	@echo "===================================================================="
-	@sleep 0.1
-	@echo "Done"
+.PHONY: all
+all: makedir $(OBJS)
+	$(AR) $(ARFLAGS) $(LIB) $(OBJS)
+	$(RANLIB) $(LIB)
 
-welcome_msg:
-	@echo "===================================================================="
-	@echo "\n"
-	@echo "                             LIBFT                                  "
-	@echo "\n"
-	@echo "===================================================================="
-	@echo "This Makefile will compile all the sources files and link all the   "
-	@echo "objects created to make the ft library.                             "
-	@echo "===================================================================="
-	@read -n 1 -s -r -p "Press any key to continue"
-	@echo "\n"
+.PHONY: makedir
+makedir:
+	@mkdir -p $(objdir)
+	@mkdir -p $(libdir)
 
-$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
-	@$(MKDIR) $(OBJS_DIR)
-	@echo "===================================================================="
-	@echo "Compiling $< to $@"
-	@$(CC) $(CFLAGS) -I$(INCLUDES_DIR) -c $< -o $@
-	@echo "===================================================================="
-	@sleep 0.1
-	@echo "Done"
+$(objdir)/%.o: $(srcdir)/%.c
+	$(CC) $(CFLAGS) -I$(includedir) -c $< -o $@
 
-
+.PHONY: clean
 clean:
-	@echo "===================================================================="
-	@echo "Cleaning the objects and removing the directory"
-	@$(RM) $(CREATED_OBJS)
-	@$(RMDIR) $(OBJS_DIR)
-	@echo "===================================================================="
-	@sleep 1
-	@echo "Done"
+	rm -rf $(objdir)
 
+.PHONY: fclean
 fclean: clean
-	@echo "===================================================================="
-	@echo "Cleaning the library and removing the directory"
-	@$(RM) $(NAME)
-	@$(RMDIR) $(LIB_DIR)
-	@echo "===================================================================="
-	@sleep 1
-	@echo "Done"
+	rm -rf $(libdir)
 
+.PHONY: re
 re: fclean all
+
+#### End of rules section ####
