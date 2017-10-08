@@ -19,5 +19,6 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	while (start-- != 0)
 		s++;
 	ft_strncpy(stretch, s, len);
+	stretch[len] = '\0';
 	return (stretch);
 }
