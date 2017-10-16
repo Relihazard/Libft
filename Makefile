@@ -2,6 +2,7 @@ SHELL		:= /bin/bash
 
 #### Start of system configuration section ####
 
+# TODO: change prefix and exec_prefix to the installation dir
 NAME		:= libft
 PREFIX		:= .
 EXEC_PREFIX	:= $(PREFIX)
