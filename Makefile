@@ -3,6 +3,8 @@ SHELL		:= /bin/bash
 #### Start of system configuration section ####
 
 # TODO: change prefix and exec_prefix to the installation dir
+# TODO: make one file per line
+# TODO: add QUIET variable
 NAME		:= libft
 PREFIX		:= .
 EXEC_PREFIX	:= $(PREFIX)
