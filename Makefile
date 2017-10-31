@@ -8,13 +8,16 @@ CFLAGS		:= -Wall -Wextra -Werror
 AR			:= ar
 ARFLAGS		:= rc
 RANLIB		:= ranlib
+RM			:= /bin/rm
+RMFLAGS		:= -r -f
 QUIET		:= @
 
 #### End of system configuration section ####
 
 #### Start of files definition section ####
 
-SRCS		:= ft_memset.c \
+SRCS		:= \
+	ft_memset.c \
 	ft_bzero.c \
 	ft_memcpy.c \
 	ft_memccpy.c \
@@ -77,27 +80,24 @@ OBJS		:= $(SRCS:.c=.o)
 
 #### Start of rules section ####
 
-.PHONY: $(NAME)
+.PHONY: $(NAME) all clean fclean re
+
 $(NAME): all
 
-.PHONY: all
 all: $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME).a $(OBJS)
-	$(RANLIB) $(NAME).a
+	$(QUIET)$(RANLIB) $(NAME).a
 
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-.PHONY: clean
 clean:
-	rm -rf $(OBJS)
+	$(QUIET)$(RM) $(RMFLAGS) $(OBJS)
 
-.PHONY: fclean
 fclean: clean
-	rm -rf $(NAME).a
+	$(QUIET)$(RM) $(RMFLAGS) $(NAME).a
 
-.PHONY: re
 re: fclean all
 
 #### End of rules section ####
