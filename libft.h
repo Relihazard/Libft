@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#             */
+/*   Updated: 2017/11/07 17:15:34 by agrossma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -51,12 +63,14 @@ size_t			ft_strlcat(char *dst, const char *src, size_t size);
 size_t			ft_strlen(const char *s);
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
-void			*ft_memcpy(void  *dst, const void *src, size_t n);
+void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
 
-/* Functions missing from the libc or present in a different way */
+/*
+** Functions missing from the libc or present in a different way
+*/
 char			**ft_strsplit(char const *s, char c);
 char			*ft_itoa(int n);
 char			*ft_strjoin(char const *s1, char const *s2);
@@ -82,7 +96,9 @@ void			ft_strdel(char **as);
 void			ft_striter(char *s, void (*f)(char *));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 
-/* Functions to manipulate a linked list */
+/*
+** Functions to manipulate a linked list
+*/
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstadd(t_list **alst, t_list *new);
@@ -90,4 +106,4 @@ void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 
-#endif /* LIBFT_H */
+#endif
