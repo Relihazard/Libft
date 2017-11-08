@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strnlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 16:51:02 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/08 17:38:10 by agrossma         ###   ########.fr       */
+/*   Created: 2017/11/08 16:45:28 by agrossma          #+#    #+#             */
+/*   Updated: 2017/11/08 16:47:43 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t l)
+size_t	ft_strnlen(const char *s, size_t maxlen)
 {
-	size_t	needle_len;
+	size_t	len;
 
-	if (*needle == '\0')
-		return ((char *)haystack);
-	needle_len = ft_strlen(needle);
-	while (*haystack && l-- >= needle_len)
-		if (ft_memcmp(haystack++, needle, needle_len) == 0)
-			return ((char *)(haystack - 1));
-	return (NULL);
+	len = ft_strlen(s);
+	if (len < maxlen)
+		return (len);
+	else
+		return (maxlen);
 }

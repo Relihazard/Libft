@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:02 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 16:51:22 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/08 17:41:54 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	while (n--)
-		if (*s1++ != *s2++)
+		if ((*s1++ != *s2++) || *s1 == '\0' || *s2 == '\0')
 			return (*(unsigned char *)(s1 - 1) - *(unsigned char *)(s2 - 1));
 	return (0);
 }

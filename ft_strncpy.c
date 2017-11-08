@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:02 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 16:51:22 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/08 16:50:56 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	while (len-- && *src)
-		*dst++ = *src++;
-	while (len--)
-		*dst++ = '\0';
-	return (dst);
+	size_t	size;
+
+	size = ft_strnlen(src, len);
+	if (size != len)
+		ft_memset(dst + size, '\0', len - size);
+	return ((char *)ft_memcpy(dst, src, size));
 }

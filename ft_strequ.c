@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:01 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/08 14:29:20 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/08 18:55:38 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
-	if (*s1 == '\0' || *s2 == '\0')
-		return (0);
 	if (ft_strlen(s1) != ft_strlen(s2))
 		return (0);
 	while (*s1 && *s2)

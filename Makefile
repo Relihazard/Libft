@@ -6,7 +6,7 @@
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#              #
-#    Updated: 2017/11/08 14:30:08 by agrossma         ###   ########.fr        #
+#    Updated: 2017/11/08 16:44:35 by agrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,8 @@ SRCS		:= \
 	ft_islower.c \
 	ft_isupper.c \
 	ft_strchr.c \
-	ft_strrchr.c
+	ft_strrchr.c \
+	ft_strnlen.c
 OBJS		:= $(SRCS:.c=.o)
 
 #### End of files definition section ####

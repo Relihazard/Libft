@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:02 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 16:51:22 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/08 17:21:40 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	while (*s1)
-		s1++;
-	while (n-- && *s2)
-		*s1++ = *s2++;
-	*s1 = '\0';
-	return (s1);
+	char	*s;
+	size_t	cat_end;
+
+	s = s1;
+	s1 += ft_strlen(s1);
+	cat_end = ft_strnlen(s2, n);
+	s1[cat_end] = '\0';
+	ft_memcpy(s1, s2, cat_end);
+	return (s);
 }

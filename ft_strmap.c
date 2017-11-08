@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:02 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/08 14:30:36 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/08 18:50:24 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,17 @@
 char	*ft_strmap(char const *s, char (*f)(char))
 {
 	char	*str;
+	int		i;
 
 	if (f == NULL)
 		return (NULL);
-	if ((str = (char *)malloc(sizeof(*str) * ft_strlen(s))) == NULL)
+	if ((str = ft_strdup(s)) == NULL)
 		return (NULL);
-	while (*s)
-		*str++ = f(*s++);
+	i = 0;
+	while (s[i])
+	{
+		str[i] = f(s[i]);
+		i++;
+	}
 	return (str);
 }
