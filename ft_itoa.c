@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:50:59 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 16:51:20 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/08 13:37:07 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 ** \param len The adress of lenght of the integer
 ** \param weight The adress of the weight of the integer
 */
+
 static void	ft_intlen(int n, size_t *len, int *weight)
 {
 	*len = 1;
@@ -40,6 +41,7 @@ static void	ft_intlen(int n, size_t *len, int *weight)
 ** \param n The integer to convert
 ** \return The string representing the integer or NULL if the allocation failed
 */
+
 char		*ft_itoa(int n)
 {
 	char	*conv;

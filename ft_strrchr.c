@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 16:51:00 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/08 13:39:10 by agrossma         ###   ########.fr       */
+/*   Created: 2017/11/08 13:28:09 by agrossma          #+#    #+#             */
+/*   Updated: 2017/11/08 14:24:16 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Writes the character c into the file descriptor fd
-** \param c The character to write
-** \param fd The file descriptor where to write
-*/
-
-void	ft_putchar_fd(char c, int fd)
+char	*ft_strrchr(const char *s, int c)
 {
-	write(fd, &c, 1);
+	char	*result;
+
+	result = NULL;
+	while (1)
+	{
+		if (*s == (char)c)
+			result = (char *)s;
+		if (*s++ == '\0')
+			break ;
+	}
+	return (result);
 }

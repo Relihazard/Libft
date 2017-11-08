@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:02 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 16:51:22 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/08 14:29:30 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 ** \param n The number of character to compare
 ** \return 1 if the two strings are equal, 0 otherwise
 */
+
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
 	if (*s1 == '\0' || *s2 == '\0' || n == 0)

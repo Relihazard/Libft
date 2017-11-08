@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:50:59 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 16:51:20 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/08 13:35:21 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,11 @@
 ** \param lst Pointer to the first link of the list
 ** \param f Adress of a function to apply to each link
 */
+
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
 	if (f == NULL)
-		return;
+		return ;
 	while (lst)
 	{
 		(*f)(lst);

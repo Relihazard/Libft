@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:01 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 16:51:21 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/08 14:29:20 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 ** \param s2 The second string to compare
 ** \return 1 if the two strings are equal, 0 otherwise
 */
+
 int		ft_strequ(char const *s1, char const *s2)
 {
 	if (*s1 == '\0' || *s2 == '\0')

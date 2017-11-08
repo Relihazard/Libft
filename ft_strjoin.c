@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:01 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 16:51:22 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/08 13:42:33 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*join;
 
-	if ((join = (char *)malloc(sizeof(*join) * (ft_strlen(s1) + ft_strlen(s2) + 1))) == NULL)
+	if ((join = (char *)malloc(sizeof(*join) *
+				(ft_strlen(s1) + ft_strlen(s2) + 1))) == NULL)
 		return (NULL);
 	while (*s1)
 		*join++ = *s1++;

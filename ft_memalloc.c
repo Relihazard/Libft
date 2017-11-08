@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:00 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 16:51:20 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/08 13:37:49 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 ** \param size The size of the memory area to allocate
 ** \return The memory area or NULL if fail
 */
+
 void	*ft_memalloc(size_t size)
 {
 	void	*area;

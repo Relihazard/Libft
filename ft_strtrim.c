@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:02 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 17:44:57 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/08 14:44:54 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,3 +20,9 @@
 ** \param s The string to trim
 ** \return The trimmed string or NULL if the allocation failed
 */
+
+char	*ft_strtrim(char const *s)
+{
+	(void)s;
+	return (NULL);
+}

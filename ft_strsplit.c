@@ -6,8 +6,15 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:02 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 16:51:22 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/08 14:38:41 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+char	**ft_strsplit(char const *s, char c)
+{
+	(void)s;
+	(void)c;
+	return (NULL);
+}

@@ -6,7 +6,7 @@
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#              #
-#    Updated: 2017/11/07 16:51:12 by agrossma         ###   ########.fr        #
+#    Updated: 2017/11/08 14:30:08 by agrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,7 +85,11 @@ SRCS		:= \
 	ft_lstadd.c \
 	ft_lstiter.c \
 	ft_lstmap.c \
-	ft_isspace.c
+	ft_isspace.c \
+	ft_islower.c \
+	ft_isupper.c \
+	ft_strchr.c \
+	ft_strrchr.c
 OBJS		:= $(SRCS:.c=.o)
 
 #### End of files definition section ####
@@ -96,13 +100,14 @@ OBJS		:= $(SRCS:.c=.o)
 
 $(NAME): all
 
-all: $(OBJS)
-	$(AR) $(ARFLAGS) $(NAME).a $(OBJS)
-	$(QUIET)$(RANLIB) $(NAME).a
-
+all: $(OBJS) $(NAME).a
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
+
+%.a: $(OBJS)
+	$(AR) $(ARFLAGS) $(NAME).a $(OBJS)
+	$(QUIET)$(RANLIB) $(NAME).a
 
 clean:
 	$(QUIET)$(RM) $(RMFLAGS) $(OBJS)

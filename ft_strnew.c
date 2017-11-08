@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:02 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 16:51:22 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/08 14:31:53 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 ** \param size The size of the string
 ** \return The allocated string or NULL if the allocations failed
 */
+
 char	*ft_strnew(size_t size)
 {
 	return ((char *)ft_memalloc(sizeof(char) * (size + 1)));

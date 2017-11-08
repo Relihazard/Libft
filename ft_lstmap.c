@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:00 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 16:51:20 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/08 13:38:28 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 ** \param f Adress of a function to apply to each link
 ** \return The new list or NULL if an allocation fails
 */
+
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-
 	t_list	*result;
 	t_list	*tmp;
 	t_list	*tmp2;

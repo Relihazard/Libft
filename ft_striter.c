@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:01 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 16:51:21 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/08 14:28:59 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@
 ** \param s The string to iterate on
 ** \param f The function to calls on every character of s
 */
+
 void	ft_striter(char *s, void (*f)(char *))
 {
 	if (f == NULL)
-		return;
+		return ;
 	while (*s)
 		f(s++);
 }

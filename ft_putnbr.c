@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:01 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 16:51:21 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/08 13:39:40 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 ** Prints the integer n on the standard output
 ** n The integer to print
 */
+
 void	ft_putnbr(int n)
 {
 	ft_putstr(ft_itoa(n));
