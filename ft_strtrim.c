@@ -6,11 +6,53 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:02 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/08 14:44:54 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/10 14:36:24 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Count the number of ' ', '\n' or '\t' at the beginning of the string
+** \param s The string to count into
+** \return The number of spaces
+*/
+
+static size_t	ft_count_space_beginning(char const *s)
+{
+	size_t	count;
+	int		i;
+
+	i = 0;
+	count = 0;
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+	{
+		count++;
+		i++;
+	}
+	return (count);
+}
+
+/*
+** Count the numner of ' ', '\n' or '\t' at the end of the string
+** \param s The string to count into
+** \return The number of spaces
+*/
+
+static size_t	ft_count_space_end(char const *s)
+{
+	size_t	count;
+	int		i;
+
+	i = ft_strlen(s) - 1;
+	count = 0;
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+	{
+		count++;
+		i--;
+	}
+	return (count);
+}
 
 /*
 ** Allocate (with malloc) and returns a copy of the passed string without the
@@ -21,8 +63,29 @@
 ** \return The trimmed string or NULL if the allocation failed
 */
 
-char	*ft_strtrim(char const *s)
+char			*ft_strtrim(char const *s)
 {
-	(void)s;
-	return (NULL);
+	char	*trim;
+	size_t	space_beginning;
+	size_t	space_end;
+	size_t	len;
+	size_t	i;
+
+	if (s == NULL)
+		return (NULL);
+	space_beginning = ft_count_space_beginning(s);
+	space_end = ft_count_space_end(s);
+	len = ft_strlen(s);
+	if (len - space_beginning <= 0)
+		return (ft_strdup(""));
+	trim = ft_strnew(len - space_beginning - space_end);
+	if (trim == NULL)
+		return (NULL);
+	i = 0;
+	while (i + space_beginning < len - space_end)
+	{
+		trim[i] = s[i + space_beginning];
+		i++;
+	}
+	return (trim);
 }

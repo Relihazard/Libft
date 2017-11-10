@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:01 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/08 13:40:10 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/10 16:17:05 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 void	ft_putstr(char const *s)
 {
-	while (*s)
-		ft_putchar(*s++);
+	if (s == NULL)
+		return ;
+	ft_putstr_fd(s, 1);
 }

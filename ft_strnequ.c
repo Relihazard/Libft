@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:02 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/08 18:55:48 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/10 17:13:14 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
 
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	if (ft_strlen(s1) != ft_strlen(s2))
+	if (s1 == NULL || s2 == NULL)
 		return (0);
-	while (*s1 && *s2 && n != 0)
+	while (*s1 != '\0' && *s2 != '\0' && n != 0)
 	{
 		if (*s1++ != *s2++)
 			return (0);

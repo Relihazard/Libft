@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:50:59 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 18:28:27 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/10 13:53:13 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*dest;
+	t_byte	*dest;
 
-	dest = (unsigned char *)s;
+	dest = (t_byte *)s;
 	while (n--)
 		*dest++ = 0;
 }

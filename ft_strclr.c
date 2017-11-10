@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:01 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/08 14:28:05 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/10 13:53:12 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 void	ft_strclr(char *s)
 {
-	while (*s)
-		*s++ = '\0';
+	if (s == NULL)
+		return ;
+	ft_bzero(s, ft_strlen(s));
 }

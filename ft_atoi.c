@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:50:59 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/08 18:38:04 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/10 16:27:01 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		ft_atoi(const char *str)
 	int				i;
 
 	result = 0;
-	while (ft_isspace(*str))
+	while (ft_isspace(*str) || *str == '0')
 		str++;
 	if (*str == '-')
 		sign = -1;

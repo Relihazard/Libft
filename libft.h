@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/08 18:13:26 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/10 14:47:48 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,27 +37,32 @@ typedef struct	s_list
 }				t_list;
 
 /*
+** Typedef for the memory related functions
+*/
+typedef unsigned char	t_byte;
+
+/*
 ** Functions already existing in the libc, rewrited for this library
 ** \see man function (without the ft_)
 */
 char			*ft_strcat(char *s1, const char *s2);
+char			*ft_strchr(const char *s, int c);
 char			*ft_strcpy(char *dst, const char *src);
 char			*ft_strdup(const char *s1);
 char			*ft_strncat(char *s1, const char *s2, size_t n);
 char			*ft_strncpy(char *dst, const char *src, size_t len);
 char			*ft_strnstr(const char *haystack, const char *needle, size_t n);
-char			*ft_strstr(const char *haystack, const char *needle);
-char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
+char			*ft_strstr(const char *haystack, const char *needle);
 int				ft_atoi(const char *str);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
 int				ft_isascii(int c);
 int				ft_isdigit(int c);
 int				ft_islower(int c);
-int				ft_isupper(int c);
 int				ft_isprint(int c);
 int				ft_isspace(int c);
+int				ft_isupper(int c);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);

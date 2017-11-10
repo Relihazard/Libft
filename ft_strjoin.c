@@ -6,14 +6,18 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:01 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/08 19:01:18 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/10 13:53:13 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-**
+** Allocate with malloc and return a fresh string finished by a '\0' resulting
+** in the concatenation of s1 and s2.
+** \param s1 The prefix string
+** \param s2 The suffix string
+** \return The fresh string or NULL if the allocation failed
 */
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -22,7 +26,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		j;
 
-	join = (char *)ft_memalloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	join = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (join == NULL)
 		return (NULL);
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:00 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/08 15:35:08 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/10 14:31:58 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
+	t_byte			*d;
+	const t_byte	*s;
 
-	d = (unsigned char *)dst;
-	s = (const unsigned char *)src;
+	d = (t_byte *)dst;
+	s = (const t_byte *)src;
 	while (n--)
 		*d++ = *s++;
 	return (dst);

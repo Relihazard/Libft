@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:00 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/08 13:38:37 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/10 13:53:12 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 
 void	ft_memdel(void **ap)
 {
+	if (ap == NULL)
+		return ;
 	free(*ap);
 	*ap = NULL;
 }

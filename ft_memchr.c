@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:00 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/07 16:51:20 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/10 13:53:13 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*src;
+	t_byte	*src;
 
-	src = (unsigned char *)s;
+	src = (t_byte *)s;
 	while (n--)
 	{
-		if (*src == (unsigned char)c)
+		if (*src == (t_byte)c)
 			return (src);
 		src++;
 	}
