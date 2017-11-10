@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:01 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/08 16:11:22 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/10 17:27:45 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s1)
 	char	*copy;
 
 	len = ft_strlen(s1);
-	copy = malloc(len + 1);
+	copy = (char *)malloc(len + 1);
 	if (copy == NULL)
 		return (NULL);
 	copy = (char *)ft_memcpy(copy, s1, len);
