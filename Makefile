@@ -6,7 +6,7 @@
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#              #
-#    Updated: 2017/11/14 16:05:33 by agrossma         ###   ########.fr        #
+#    Updated: 2017/11/14 17:54:08 by agrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,7 +92,8 @@ SRCS		:= \
 	ft_tolower.c \
 	ft_toupper.c \
 	ft_abs.c \
-	ft_index.c
+	ft_index.c \
+	ft_lstaddend.c
 OBJS		:= $(SRCS:.c=.o)
 
 #### End of files definition section ####
