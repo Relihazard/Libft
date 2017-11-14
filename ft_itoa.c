@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:50:59 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/10 16:13:18 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/13 17:51:33 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,7 @@ char		*ft_itoa(int n)
 	size_t	current;
 
 	ft_intlen(n, &len, &weight);
-	if ((conv = ft_strnew(len + 1)) == NULL)
-		return (NULL);
+	MALLOC_CHECK((conv = ft_strnew(len + 1)));
 	current = 0;
 	if (n < 0)
 		conv[current++] = '-';

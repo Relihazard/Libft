@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/10 14:47:48 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/13 18:03:25 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+
+# define NULL_CHECK(x) if (x == NULL) return (NULL)
+# define VOID_NULL_CHECK(x) if (x == NULL) return
+# define MALLOC_CHECK(x) if (x == NULL) return (NULL)
 
 /*
 ** Struct for a linked list
@@ -77,6 +81,7 @@ void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
+int				ft_abs(int i);
 
 /*
 ** Functions missing from the libc or present in a different way

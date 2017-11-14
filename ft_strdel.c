@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:01 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/10 13:53:12 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/11 14:32:31 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@
 
 void	ft_strdel(char **as)
 {
-	ft_memdel((void *)as);
+	ft_memdel((void **)as);
 }

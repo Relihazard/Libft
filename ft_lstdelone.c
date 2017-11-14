@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:50:59 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/08 13:34:32 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/13 17:58:35 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	if (alst == NULL || *alst == NULL)
-		return ;
+	VOID_NULL_CHECK(alst);
+	VOID_NULL_CHECK(*alst);
 	(*del)((*alst)->content, (*alst)->content_size);
-	free(*alst);
+	ft_memdel((void **)alst);
 	*alst = NULL;
 }

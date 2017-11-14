@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:00 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/08 13:38:28 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/13 17:56:40 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	t_list	*tmp;
 	t_list	*tmp2;
 
-	if (lst == NULL || f == NULL)
-		return (NULL);
+	NULL_CHECK(lst);
+	NULL_CHECK(f);
 	tmp2 = f(lst);
 	if ((result = ft_lstnew(tmp2->content, tmp2->content_size)))
 	{
@@ -37,8 +37,8 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 		while (lst)
 		{
 			tmp2 = f(lst);
-			if (!(tmp->next = ft_lstnew(tmp2->content, tmp2->content_size)))
-				return (NULL);
+			MALLOC_CHECK(
+					(tmp->next = ft_lstnew(tmp2->content, tmp2->content_size)));
 			tmp = tmp->next;
 			lst = lst->next;
 		}

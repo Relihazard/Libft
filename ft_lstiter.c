@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:50:59 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/08 13:35:21 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/13 17:56:53 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	if (f == NULL)
-		return ;
+	VOID_NULL_CHECK(f);
 	while (lst)
 	{
 		(*f)(lst);

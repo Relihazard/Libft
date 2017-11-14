@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:02 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/10 16:10:00 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/13 18:02:36 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,18 +74,16 @@ char			**ft_strsplit(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	nb_words = ft_count_words((char *)s, c);
-	if ((split = (char **)malloc((nb_words + 1) * sizeof(char *))) == NULL)
-		return (NULL);
+	MALLOC_CHECK(
+			(split = (char **)ft_memalloc((nb_words + 1) * sizeof(char *))));
 	i = 0;
 	while (nb_words--)
 	{
 		while (*s == c)
 			s++;
 		split[i] = ft_strsub((char *)s, 0, ft_word_len((char *)s, c));
-		if (split[i++] == NULL)
-			return (NULL);
+		MALLOC_CHECK(split[i++]);
 		s += ft_word_len((char *)s, c);
 	}
-	split[i] = NULL;
 	return (split);
 }

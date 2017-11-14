@@ -6,7 +6,7 @@
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#              #
-#    Updated: 2017/11/10 14:50:14 by agrossma         ###   ########.fr        #
+#    Updated: 2017/11/13 18:26:59 by agrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SHELL		:= /bin/bash
 
 #### Start of system configuration section ####
 
-NAME		:= libft
+NAME		:= libft.a
 CC			:= gcc
 CFLAGS		:= -Wall -Wextra -Werror
 AR			:= ar
@@ -90,31 +90,36 @@ SRCS		:= \
 	ft_strsub.c \
 	ft_strtrim.c \
 	ft_tolower.c \
-	ft_toupper.c
+	ft_toupper.c \
+	ft_abs.c
 OBJS		:= $(SRCS:.c=.o)
 
 #### End of files definition section ####
 
 #### Start of rules section ####
 
-.PHONY: $(NAME) all clean fclean re
+.PHONY: all clean fclean re
 
-$(NAME): all
+all: $(NAME)
 
-all: $(OBJS) $(NAME).a
+$(NAME): $(OBJS)
+	$(QUIET)echo "Linking the library"
+	$(QUIET)$(AR) $(ARFLAGS) $@ $^
+	$(QUIET)echo "Indexing the library"
+	$(QUIET)$(RANLIB) $@
+	$(QUIET)echo "Done."
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-%.a: $(OBJS)
-	$(AR) $(ARFLAGS) $(NAME).a $(OBJS)
-	$(QUIET)$(RANLIB) $(NAME).a
+	$(QUIET)echo "Compiling $<"
+	$(QUIET)$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
+	$(QUIET)echo "Cleaning the objects"
 	$(QUIET)$(RM) $(RMFLAGS) $(OBJS)
 
 fclean: clean
-	$(QUIET)$(RM) $(RMFLAGS) $(NAME).a
+	$(QUIET)echo "Deleting the library"
+	$(QUIET)$(RM) $(RMFLAGS) $(NAME)
 
 re: fclean all
 

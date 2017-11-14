@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:01 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/10 13:53:13 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/13 18:00:57 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
 	join = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (join == NULL)
-		return (NULL);
+	MALLOC_CHECK(join);
 	i = 0;
 	j = 0;
 	while (s1[i])
@@ -38,6 +37,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	while (s2[i])
 		join[j++] = s2[i++];
-	join[j] = '\0';
 	return (join);
 }

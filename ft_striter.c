@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:01 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/10 13:53:12 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/13 18:00:13 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 
 void	ft_striter(char *s, void (*f)(char *))
 {
-	if (f == NULL || s == NULL)
-		return ;
+	VOID_NULL_CHECK(s);
+	VOID_NULL_CHECK(f);
 	while (*s)
 		f(s++);
 }

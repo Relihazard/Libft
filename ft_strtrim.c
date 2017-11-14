@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:02 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/10 14:36:24 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/13 18:03:00 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,7 @@ char			*ft_strtrim(char const *s)
 	len = ft_strlen(s);
 	if (len - space_beginning <= 0)
 		return (ft_strdup(""));
-	trim = ft_strnew(len - space_beginning - space_end);
-	if (trim == NULL)
-		return (NULL);
+	MALLOC_CHECK((trim = ft_strnew(len - space_beginning - space_end)));
 	i = 0;
 	while (i + space_beginning < len - space_end)
 	{

@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:50:59 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/08 13:33:18 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/13 17:58:10 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-	if (alst != NULL && new != NULL)
-	{
-		new->next = *alst;
-		*alst = new;
-	}
+	VOID_NULL_CHECK(alst);
+	VOID_NULL_CHECK(new);
+	new->next = *alst;
+	*alst = new;
 }

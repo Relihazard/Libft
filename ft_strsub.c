@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:02 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/10 13:53:13 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/13 18:02:47 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 
 	if (s == NULL)
 		return (NULL);
-	if ((stretch = ft_strnew(len)) == NULL)
-		return (NULL);
+	MALLOC_CHECK((stretch = ft_strnew(len)));
 	while (start-- != 0)
 		s++;
 	ft_strncpy(stretch, s, len);
