@@ -6,7 +6,7 @@
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#              #
-#    Updated: 2017/11/14 18:08:50 by agrossma         ###   ########.fr        #
+#    Updated: 2017/11/17 11:40:07 by agrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ ARFLAGS		:= rc
 RANLIB		:= ranlib
 RM			:= /bin/rm
 RMFLAGS		:= -rf
+ECHO		:= echo
 QUIET		:= @
 
 #### End of system configuration section ####
@@ -104,22 +105,22 @@ OBJS		:= $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(QUIET)echo "Linking the library"
+	$(QUIET)$(ECHO) "Linking the library"
 	$(QUIET)$(AR) $(ARFLAGS) $@ $^
-	$(QUIET)echo "Indexing the library"
+	$(QUIET)$(ECHO) "Indexing the library"
 	$(QUIET)$(RANLIB) $@
-	$(QUIET)echo "Done."
+	$(QUIET)$(ECHO) "Done."
 
 %.o: %.c
-	$(QUIET)echo "Compiling $<"
+	$(QUIET)$(ECHO) "Compiling $<"
 	$(QUIET)$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(QUIET)echo "Cleaning the objects"
+	$(QUIET)$(ECHO) "Cleaning the objects"
 	$(QUIET)$(RM) $(RMFLAGS) $(OBJS)
 
 fclean: clean
-	$(QUIET)echo "Deleting the library"
+	$(QUIET)$(ECHO) "Deleting the library"
 	$(QUIET)$(RM) $(RMFLAGS) $(NAME)
 
 re: fclean all
