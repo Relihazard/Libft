@@ -6,7 +6,7 @@
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#              #
-#    Updated: 2017/11/17 11:40:07 by agrossma         ###   ########.fr        #
+#    Updated: 2017/11/18 12:15:44 by agrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ QUIET		:= @
 
 #### Start of files definition section ####
 
+INCLUDESDIR	:= includes/
 SRCS		:= \
 	ft_atoi.c \
 	ft_bzero.c \
@@ -113,7 +114,7 @@ $(NAME): $(OBJS)
 
 %.o: %.c
 	$(QUIET)$(ECHO) "Compiling $<"
-	$(QUIET)$(CC) $(CFLAGS) -c $< -o $@
+	$(QUIET)$(CC) $(CFLAGS) -I$(INCLUDESDIR) -c $< -o $@
 
 clean:
 	$(QUIET)$(ECHO) "Cleaning the objects"
