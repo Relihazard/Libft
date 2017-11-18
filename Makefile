@@ -6,11 +6,7 @@
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2017/11/18 12:15:44 by agrossma         ###   ########.fr        #
-=======
-#    Updated: 2017/11/17 13:13:00 by agrossma         ###   ########.fr        #
->>>>>>> 3b60a0d4fbb1fe856a420b285ad02b96c7d48cea
+#    Updated: 2017/11/18 12:49:13 by agrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +20,8 @@ CFLAGS		:= -Wall -Wextra -Werror
 AR			:= ar
 ARFLAGS		:= rc
 RANLIB		:= ranlib
+MKDIR		:= mkdir
+MKDIRFLAGS	:= -p
 RM			:= /bin/rm
 RMFLAGS		:= -rf
 ECHO		:= echo
@@ -33,7 +31,8 @@ QUIET		:= @
 
 #### Start of files definition section ####
 
-INCLUDESDIR	:= includes/
+INCLUDESDIR	:= includes
+SRCDIR		:= src
 SRCS		:= \
 	ft_atoi.c \
 	ft_bzero.c \
@@ -99,7 +98,8 @@ SRCS		:= \
 	ft_toupper.c \
 	ft_abs.c \
 	ft_index.c
-OBJS		:= $(SRCS:.c=.o)
+OBJDIR		:= obj
+OBJS		:= $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 
 #### End of files definition section ####
 
@@ -109,14 +109,17 @@ OBJS		:= $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) | $(OBJDIR)
 	$(QUIET)$(ECHO) "Linking the library"
-	$(QUIET)$(AR) $(ARFLAGS) $@ $^
+	$(QUIET)$(AR) $(ARFLAGS) $@ $(OBJS)
 	$(QUIET)$(ECHO) "Indexing the library"
 	$(QUIET)$(RANLIB) $@
 	$(QUIET)$(ECHO) "Done."
 
-%.o: %.c
+$(OBJDIR):
+	$(QUIET)$(MKDIR) $(MKDIRFLAGS) $(OBJDIR)
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
 	$(QUIET)$(ECHO) "Compiling $<"
 	$(QUIET)$(CC) $(CFLAGS) -I$(INCLUDESDIR) -c $< -o $@
 
