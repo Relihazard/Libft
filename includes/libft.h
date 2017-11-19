@@ -15,9 +15,9 @@
 
 /*
 ** Include headers for the typedefs, macros and standard functions
-** stdlib.h for the functions malloc and free
+** stdlib.h for the functions malloc(3) and free(3)
 ** string.h for the macro NULL and the typedef size_t
-** unistd.h for the function write
+** unistd.h for the function write(2)
 */
 # include <stdlib.h>
 # include <string.h>
