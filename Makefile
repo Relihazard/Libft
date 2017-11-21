@@ -6,7 +6,7 @@
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#              #
-#    Updated: 2017/11/18 12:49:13 by agrossma         ###   ########.fr        #
+#    Updated: 2017/11/21 16:56:54 by agrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -97,7 +97,9 @@ SRCS		:= \
 	ft_tolower.c \
 	ft_toupper.c \
 	ft_abs.c \
-	ft_index.c
+	ft_index.c \
+	ft_putaddr.c \
+	ft_putaddr_fd.c
 OBJDIR		:= obj
 OBJS		:= $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 
