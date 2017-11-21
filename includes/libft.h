@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/21 16:56:06 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/21 18:57:58 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # define NULL_CHECK(x) if (x == NULL) return (NULL)
 # define VOID_NULL_CHECK(x) if (x == NULL) return
 # define MALLOC_CHECK(x) if (x == NULL) return (NULL)
+# define BUFF_SIZE 32
 
 /*
 ** Struct for a linked list
@@ -113,6 +114,7 @@ void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 char			*ft_index(const char *s, int c);
 void			ft_putaddr(void *ptr);
 void			ft_putaddr_fd(void *ptr, int fd);
+int				ft_readline(const int fd, char **line);
 
 /*
 ** Functions to manipulate a linked list
