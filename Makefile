@@ -96,7 +96,6 @@ SRCS		:= \
 	ft_strtrim.c \
 	ft_tolower.c \
 	ft_toupper.c \
-	ft_abs.c \
 	ft_index.c \
 	ft_putaddr.c \
 	ft_putaddr_fd.c \
