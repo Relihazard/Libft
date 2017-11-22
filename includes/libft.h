@@ -86,6 +86,7 @@ int				ft_abs(int i);
 
 /*
 ** Functions missing from the libc or present in a different way
+** TODO: add quick sort, heap sort and fusion sort (for integer tables, function pointer for comp?)
 */
 char			**ft_strsplit(char const *s, char c);
 char			*ft_itoa(int n);
