@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:02 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/13 18:02:36 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/23 16:33:49 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static size_t	ft_word_len(char *s, char c)
 }
 
 /*
-** Allocate with malloc and retur an array of fresh string (all terminated by a
+** Allocate with malloc and return an array of fresh string (all terminated by a
 ** '\0', even the array) resulting in the splitting of s at the character c
 ** \param s The string to split
 ** \param c The character of the splitting
