@@ -6,7 +6,7 @@
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#              #
-#    Updated: 2017/11/21 18:58:33 by agrossma         ###   ########.fr        #
+#    Updated: 2017/11/23 17:01:45 by agrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,7 +99,8 @@ SRCS		:= \
 	ft_index.c \
 	ft_putaddr.c \
 	ft_putaddr_fd.c \
-	ft_readline.c
+	ft_readline.c \
+	ft_extcmp.c
 OBJDIR		:= obj
 OBJS		:= $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 

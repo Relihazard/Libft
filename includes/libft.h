@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/23 12:03:21 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/23 16:59:13 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ char			*ft_index(const char *s, int c);
 void			ft_putaddr(void *ptr);
 void			ft_putaddr_fd(void *ptr, int fd);
 int				ft_readline(const int fd, char **line);
+int				ft_extcmp(const char *path, const char *ext);
 
 /*
 ** Functions to manipulate a linked list
