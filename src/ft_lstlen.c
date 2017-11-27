@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_extcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/23 16:57:16 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/25 12:59:11 by agrossma         ###   ########.fr       */
+/*   Created: 2017/11/27 14:28:12 by agrossma          #+#    #+#             */
+/*   Updated: 2017/11/27 14:29:40 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_extcmp(const char *path, const char *ext)
+size_t	ft_lstlen(t_list *lst)
 {
-	size_t	nl;
-	size_t	el;
-	char	*p;
-	char	*e;
+	size_t	len;
 
-	p = (char *)path;
-	e = (char *)ext;
-	nl = ft_strlen(p);
-	el = ft_strlen(e);
-	return (!ft_strcmp(p + nl - el, e));
+	len = 0;
+	while (lst)
+	{
+		len++;
+		lst = lst->next;
+	}
+	return (len);
 }

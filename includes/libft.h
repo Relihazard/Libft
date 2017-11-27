@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/23 16:59:13 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/11/27 15:27:01 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@
 # define VOID_NULL_CHECK(x) if (x == NULL) return
 # define MALLOC_CHECK(x) if (x == NULL) return (NULL)
 # define BUFF_SIZE 32
+# define FALSE 0
+# define TRUE !FALSE
+
 
 /*
 ** Struct for a linked list
@@ -45,7 +48,7 @@ typedef struct	s_list
 ** Typedef for the memory related functions
 */
 typedef unsigned char	t_byte;
-
+typedef int				t_bool;
 /*
 ** Functions already existing in the libc, rewrited for this library
 ** \see man function (without the ft_)
@@ -87,6 +90,8 @@ int				ft_abs(int i);
 /*
 ** Functions missing from the libc or present in a different way
 ** TODO: add quick sort, heap sort and fusion sort (for integer tables, function pointer for comp?)
+** TODO: add free **char function
+** FIXME: check ft_memdel for the pointer
 */
 char			**ft_strsplit(char const *s, char c);
 char			*ft_itoa(int n);
@@ -127,7 +132,6 @@ void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-void			ft_lstaddend(t_list **list, t_list *new);
-void			ft_lstshift(t_list **alst);
+size_t			ft_lstlen(t_list *lst);
 
 #endif
