@@ -6,7 +6,7 @@
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#              #
-#    Updated: 2017/11/28 14:25:36 by agrossma         ###   ########.fr        #
+#    Updated: 2017/12/04 13:13:59 by agrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -114,7 +114,7 @@ OBJS		:= $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)
 
-$(NAME): $(OBJS) | $(OBJDIR)
+$(NAME): $(OBJDIR) $(OBJS)
 	$(QUIET)$(ECHO) "Linking the library"
 	$(QUIET)$(AR) $(ARFLAGS) $@ $(OBJS)
 	$(QUIET)$(ECHO) "Indexing the library"
