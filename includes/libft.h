@@ -89,7 +89,7 @@ void			ft_bzero(void *s, size_t n);
 char			*ft_index(const char *s, int c);
 /*
 ** Functions missing from the libc or present in a different way
-** TODO: add quick sort, heap sort and fusion sort (for integer tables, function pointer for comp?)
+** TODO: add heap sort and merge sort (for integer tables, function pointer for comp?)
 ** TODO: add free **char function
 ** FIXME: check ft_memdel for the pointer
 */
@@ -122,6 +122,11 @@ void			ft_strdel(char **as);
 void			ft_striter(char *s, void (*f)(char *));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 int				ft_atoi_base(const char *str, int base);
+void			ft_quick_sort(int *tab, int low, int high);
+void			ft_merge_sort(int *to_sort, size_t n);
+void			ft_swap(int *a, int *b);
+size_t			ft_tablen(int *tab);
+
 
 /*
 ** Functions to manipulate a linked list

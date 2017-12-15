@@ -102,7 +102,11 @@ SRCS		:= \
 	ft_readline.c \
 	ft_extcmp.c \
 	ft_lstlen.c \
-	ft_atoi_base.c
+	ft_atoi_base.c \
+	ft_swap.c \
+	ft_quick_sort.c \
+	ft_tablen.c \
+	ft_merge_sort.c
 OBJDIR		:= obj
 OBJS		:= $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 
