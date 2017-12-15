@@ -105,7 +105,6 @@ SRCS		:= \
 	ft_atoi_base.c \
 	ft_swap.c \
 	ft_quick_sort.c \
-	ft_tablen.c \
 	ft_merge_sort.c
 OBJDIR		:= obj
 OBJS		:= $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
@@ -134,7 +133,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 
 clean:
 	$(QUIET)$(ECHO) "Cleaning the objects"
-	$(QUIET)$(RM) $(RMFLAGS) $(OBJS)
+	$(QUIET)$(RM) $(RMFLAGS) $(OBJS) $(OBJDIR)
 
 fclean: clean
 	$(QUIET)$(ECHO) "Deleting the library"

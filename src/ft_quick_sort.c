@@ -29,7 +29,7 @@ void		ft_quick_sort(int *tab, int low, int high)
 
 	if (low < high)
 	{
-		p = ft_partition(tab, low, hi);
+		p = ft_partition(tab, low, high);
 		ft_quick_sort(tab, low, p - 1);
 		ft_quick_sort(tab, p + 1, high);
 	}
