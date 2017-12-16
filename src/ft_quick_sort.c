@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_quick_sort.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/12/16 17:16:05 by agrossma          #+#    #+#             */
+/*   Updated: 2017/12/16 17:21:25 by agrossma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	ft_partition(int *tab, int low, int high)
 {
-	int		pivot;
-	int		i;
-	int		j;
+	int	pivot;
+	int	i;
+	int	j;
 
 	pivot = tab[high];
 	i = low - 1;
@@ -23,9 +35,9 @@ static int	ft_partition(int *tab, int low, int high)
 	return (i + 1);
 }
 
-void		ft_quick_sort(int *tab, int low, int high)
+void		t_quick_sort(int *tab, int low, int high)
 {
-	int		p;
+	int	p;
 
 	if (low < high)
 	{

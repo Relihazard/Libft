@@ -6,7 +6,7 @@
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#              #
-#    Updated: 2017/12/04 13:13:59 by agrossma         ###   ########.fr        #
+#    Updated: 2017/12/16 17:21:58 by agrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,8 +104,7 @@ SRCS		:= \
 	ft_lstlen.c \
 	ft_atoi_base.c \
 	ft_swap.c \
-	ft_quick_sort.c \
-	ft_merge_sort.c
+	ft_quick_sort.c
 OBJDIR		:= obj
 OBJS		:= $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 

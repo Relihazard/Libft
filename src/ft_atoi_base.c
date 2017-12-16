@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 14:25:47 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/28 14:28:27 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/12/16 17:07:46 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ static int	ft_inbase(char c, int base)
 	return ((c >= '0' && c <= '9') || (c >= 'A' && c <= ('A' + base - 10)));
 }
 
-int		ft_atoi_base(const char *str, int base)
+int			ft_atoi_base(const char *str, int base)
 {
-
 	int		value;
 	int		sign;
 

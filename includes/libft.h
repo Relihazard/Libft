@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/28 14:25:20 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/12/16 17:21:47 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@
 # define BUFF_SIZE 32
 # define FALSE 0
 # define TRUE !FALSE
-
+# define FT_MIN(x, y) (x) < (y) ? (x) : (y)
+# define FT_MAX(x, y) (x) > (y) ? (x) : (y)
 
 /*
 ** Struct for a linked list
@@ -89,7 +90,7 @@ void			ft_bzero(void *s, size_t n);
 char			*ft_index(const char *s, int c);
 /*
 ** Functions missing from the libc or present in a different way
-** TODO: add heap sort and merge sort (for integer tables, function pointer for comp?)
+** TODO: add heap sort and merge sort (for integer array)
 ** TODO: add free **char function
 ** FIXME: check ft_memdel for the pointer
 */
@@ -123,10 +124,8 @@ void			ft_striter(char *s, void (*f)(char *));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 int				ft_atoi_base(const char *str, int base);
 void			ft_quick_sort(int *tab, int low, int high);
-void			ft_merge_sort(int *to_sort, size_t n);
 void			ft_swap(int *a, int *b);
 size_t			ft_tablen(int *tab);
-
 
 /*
 ** Functions to manipulate a linked list

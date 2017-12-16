@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 16:54:55 by agrossma          #+#    #+#             */
-/*   Updated: 2017/11/21 16:55:02 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/12/16 17:09:47 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_putaddr_fd(void *ptr, int fd)
 {
-	long int   div;
-	char    tmp;
-	unsigned long int n;
+	long int			div;
+	char				tmp;
+	unsigned long int	n;
 
 	n = (unsigned long int)ptr;
 	div = 16;
