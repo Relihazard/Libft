@@ -6,34 +6,34 @@
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#              #
-#    Updated: 2017/12/16 17:21:58 by agrossma         ###   ########.fr        #
+#    Updated: 2017/12/18 19:42:15 by agrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SHELL		:= /bin/bash
+SHELL			:= /bin/bash
 
 #### Start of system configuration section ####
 
-NAME		:= libft.a
-CC			:= gcc
-CFLAGS		:= -Wall -Wextra -Werror
-AR			:= ar
-ARFLAGS		:= rc
-RANLIB		:= ranlib
-MKDIR		:= mkdir
-MKDIRFLAGS	:= -p
-RM			:= /bin/rm
-RMFLAGS		:= -rf
-ECHO		:= echo
-QUIET		:= @
+NAME			:= libft.a
+CC				:= gcc
+CFLAGS			:= -Wall -Wextra -Werror
+AR				:= ar
+ARFLAGS			:= rc
+RANLIB			:= ranlib
+MKDIR			:= mkdir
+MKDIRFLAGS		:= -p
+RM				:= /bin/rm
+RMFLAGS			:= -rf
+ECHO			:= echo
+QUIET			:= @
 
 #### End of system configuration section ####
 
 #### Start of files definition section ####
 
-INCLUDESDIR	:= includes
-SRCDIR		:= src
-SRCS		:= \
+INCLUDESDIR		:= includes
+SRCDIR			:= srcs
+SRCS			:= \
 	ft_atoi.c \
 	ft_bzero.c \
 	ft_isalnum.c \
@@ -105,8 +105,32 @@ SRCS		:= \
 	ft_atoi_base.c \
 	ft_swap.c \
 	ft_quick_sort.c
-OBJDIR		:= obj
-OBJS		:= $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
+OBJDIR			:= objs
+OBJS			:= $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
+FT_PRINTF_SRCS	:= \
+	ft_printf/ft_printf.c \
+	ft_printf/format.c \
+	ft_printf/conv_string.c \
+	ft_printf/print_padding.c \
+	ft_printf/conv_tab.c \
+	ft_printf/conv_wstring.c \
+	ft_printf/conv_escape.c \
+	ft_printf/conv_null.c \
+	ft_printf/conv_pointer.c \
+	ft_printf/conv_int.c \
+	ft_printf/print_int_prefix.c \
+	ft_printf/str_nbr_len.c \
+	ft_printf/nbr_len.c \
+	ft_printf/print_unsigned_int.c \
+	ft_printf/ft_putwchar.c \
+	ft_printf/conv_char.c \
+	ft_printf/conv_wchar.c \
+	ft_printf/conv_long.c \
+	ft_printf/unsigned_length.c \
+	ft_printf/conv_octal.c \
+	ft_printf/conv_unsigned.c \
+	ft_printf/conv_hex.c
+FT_PRINTF_OBJS	:= $(addprefix $(OBJDIR)/, $(notdir $(FT_PRINTF_SRCS:.c=.o)))
 
 #### End of files definition section ####
 
@@ -116,9 +140,9 @@ OBJS		:= $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 
 all: $(NAME)
 
-$(NAME): $(OBJDIR) $(OBJS)
+$(NAME): $(OBJDIR) $(OBJS) $(FT_PRINTF_OBJS)
 	$(QUIET)$(ECHO) "Linking the library"
-	$(QUIET)$(AR) $(ARFLAGS) $@ $(OBJS)
+	$(QUIET)$(AR) $(ARFLAGS) $@ $(OBJS) $(FT_PRINTF_OBJS)
 	$(QUIET)$(ECHO) "Indexing the library"
 	$(QUIET)$(RANLIB) $@
 	$(QUIET)$(ECHO) "Done."
@@ -130,9 +154,13 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	$(QUIET)$(ECHO) "Compiling $<"
 	$(QUIET)$(CC) $(CFLAGS) -I$(INCLUDESDIR) -c $< -o $@
 
+$(OBJDIR)/%.o: $(SRCDIR)/ft_printf/%.c
+	$(QUIET)$(ECHO) "Compiling $<"
+	$(QUIET)$(CC) $(CFLAGS) -I$(INCLUDESDIR) -c $< -o $@
+
 clean:
 	$(QUIET)$(ECHO) "Cleaning the objects"
-	$(QUIET)$(RM) $(RMFLAGS) $(OBJS) $(OBJDIR)
+	$(QUIET)$(RM) $(RMFLAGS) $(OBJS) $(FT_PRINTF_OBJS) $(OBJDIR)
 
 fclean: clean
 	$(QUIET)$(ECHO) "Deleting the library"

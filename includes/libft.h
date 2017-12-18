@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#             */
-/*   Updated: 2017/12/16 17:21:47 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/12/18 19:31:41 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@
 ** stdlib.h for the functions malloc(3) and free(3)
 ** string.h for the macro NULL and the typedef size_t
 ** unistd.h for the function write(2)
+** ft_printf.h for ft_printf and more
 */
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include "ft_printf.h"
 
 # define NULL_CHECK(x) if (x == NULL) return (NULL)
 # define VOID_NULL_CHECK(x) if (x == NULL) return
