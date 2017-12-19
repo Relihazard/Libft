@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#             */
-/*   Updated: 2017/12/18 19:31:41 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/12/19 17:08:27 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <stdio.h>
 # include "ft_printf.h"
 
 # define NULL_CHECK(x) if (x == NULL) return (NULL)
@@ -33,6 +34,12 @@
 # define TRUE !FALSE
 # define FT_MIN(x, y) (x) < (y) ? (x) : (y)
 # define FT_MAX(x, y) (x) > (y) ? (x) : (y)
+
+extern char		*g_optarg;
+extern int		g_optind;
+extern int		g_optopt;
+extern int		g_opterr;
+extern int		g_optreset;
 
 /*
 ** Struct for a linked list
@@ -90,11 +97,12 @@ void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
 char			*ft_index(const char *s, int c);
+int				ft_getopt(int argc, const char **argv, const char *optstring);
+
 /*
 ** Functions missing from the libc or present in a different way
 ** TODO: add heap sort and merge sort (for integer array)
 ** TODO: add free **char function
-** FIXME: check ft_memdel for the pointer
 */
 char			**ft_strsplit(char const *s, char c);
 char			*ft_itoa(int n);
