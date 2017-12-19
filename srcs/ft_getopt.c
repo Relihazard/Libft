@@ -6,12 +6,11 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 15:43:47 by agrossma          #+#    #+#             */
-/*   Updated: 2017/12/19 18:48:24 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/12/19 19:04:42 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "ft_getopt.h"
 
 char	*g_optarg;
 int		g_optind = 1;

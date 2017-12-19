@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#             */
-/*   Updated: 2017/12/19 18:45:59 by agrossma         ###   ########.fr       */
+/*   Updated: 2017/12/19 19:04:32 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,12 @@
 # define TRUE !FALSE
 # define FT_MIN(x, y) (x) < (y) ? (x) : (y)
 # define FT_MAX(x, y) (x) > (y) ? (x) : (y)
+
+extern char		*g_optarg;
+extern int		g_optind;
+extern int		g_optopt;
+extern int		g_opterr;
+extern int		g_optreset;
 
 /*
 ** Struct for a linked list
