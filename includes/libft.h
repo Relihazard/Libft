@@ -97,6 +97,7 @@ void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
 char			*ft_index(const char *s, int c);
+/* TODO: Use perror(3) and errno(3) to print the correct message */
 int				ft_getopt(int argc, const char **argv, const char *optstring);
 
 /*
