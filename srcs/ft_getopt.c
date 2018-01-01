@@ -29,6 +29,7 @@ static int	ft_getopt_arg_required(char *place, const char *optstring,
 	char *progname)
 {
 	place = "";
+	(void)place;
 	if (*optstring == ':')
 		return ((int)':');
 	if (g_opterr)
@@ -72,7 +73,7 @@ int			ft_getopt(int argc, const char **argv, const char *optstring)
 	static char	*place = "";
 	char		*oli;
 
-	progname = !progname ? (char *)*argv : ++progname;
+	progname = !progname ? (char *)*argv : NULL;
 	if (g_optreset || !*place)
 		if (ft_getopt_eof(argc, argv, &place) == EOF)
 			return (EOF);
