@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#             */
-/*   Updated: 2017/12/19 19:04:32 by agrossma         ###   ########.fr       */
+/*   Updated: 2018/01/06 02:08:51 by relihazar        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,9 +134,6 @@ void			ft_strdel(char **as);
 void			ft_striter(char *s, void (*f)(char *));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 int				ft_atoi_base(const char *str, int base);
-void			ft_quick_sort(int *tab, int low, int high);
-void			ft_swap(int *a, int *b);
-size_t			ft_tablen(int *tab);
 
 /*
 ** Functions to manipulate a linked list
