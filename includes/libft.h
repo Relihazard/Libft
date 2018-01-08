@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#             */
-/*   Updated: 2018/01/06 02:08:51 by relihazar        ###   ########.fr       */
+/*   Updated: 2018/01/08 13:32:03 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,6 @@ void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
 char			*ft_index(const char *s, int c);
-/* TODO: Use perror(3) and errno(3) to print the correct message */
 int				ft_getopt(int argc, const char **argv, const char *optstring);
 
 /*

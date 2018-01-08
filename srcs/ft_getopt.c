@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 15:43:47 by agrossma          #+#    #+#             */
-/*   Updated: 2017/12/19 19:04:42 by agrossma         ###   ########.fr       */
+/*   Updated: 2018/01/08 13:31:53 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,11 @@ static int	ft_getopt_arg_required(char *place, const char *optstring,
 	if (*optstring == ':')
 		return ((int)':');
 	if (g_opterr)
-		(void)ft_printf("%s: option requires an argument -- %c\n",
-			progname, g_optopt);
+	{
+		ft_putstr_fd(progname, 2);
+		ft_putstr_fd(": option requires an argument -- ",2);
+		ft_putendl_fd((const char *)&g_optopt, 2);
+	}
 	return ((int)'?');
 }
 
@@ -46,7 +49,11 @@ static int	ft_getopt_illegal_opt(char *progname, const char *optstring,
 	if (!*place)
 		g_optind++;
 	if (g_opterr && *optstring != ':')
-		(void)ft_printf("%s: illegal option -- %c\n", progname, g_optopt);
+	{
+		ft_putstr_fd(progname, 2);
+		ft_putstr_fd(": illegal option -- ", 2);
+		ft_putendl_fd((const char *)&g_optopt, 2);
+	}
 	return ((int)'?');
 }
 
