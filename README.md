@@ -8,3 +8,6 @@ since we are not allowed to use it in the first place.
 ### Build
 Simply run ```make``` in a terminal to build the library called ```libft.a```
 If you want to use it in a project just copy the .a file and include it with the ```-lft``` flag in gcc.
+
+### TODO:
+[ ] Implements qsort
