@@ -6,7 +6,7 @@
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#              #
-#    Updated: 2018/01/12 16:29:35 by relihazar        ###   ########.fr        #
+#    Updated: 2018/01/12 17:08:04 by agrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,9 @@ NAME			:= libft.a
 CC				:= gcc
 CFLAGS			:= -Wall -Wextra -Werror
 AR				:= ar
-ARFLAGS			:= rc
-RANLIB			:= ranlib
-MKDIR			:= mkdir
-MKDIRFLAGS		:= -p
-RM				:= /bin/rm
-RMFLAGS			:= -f
+ARFLAGS			:= -rcs
+MKDIR			:= mkdir -p
+RM				:= rm -f
 RMDIR			:= rmdir
 ECHO			:= echo
 QUIET			:= @
@@ -145,6 +142,13 @@ OBJS			+= $(addprefix $(OBJSDIR), $(STRING_SRCS:.c=.o))
 
 #### End of files definition section ####
 
+#### Start of linking configuration section ####
+
+LDFLAGS			:=
+LDLIBS			:=
+
+#### End of linking configuration section ####
+
 #### Start of rules section ####
 
 .PHONY: all clean fclean re
@@ -154,11 +158,9 @@ all: $(NAME)
 $(NAME): $(OBJSDIR) $(OBJS)
 	$(QUIET)$(ECHO) "AR	$@"
 	$(QUIET)$(AR) $(ARFLAGS) $@ $(OBJS)
-	$(QUIET)$(ECHO) "RANLIB	$@"
-	$(QUIET)$(RANLIB) $@
 
 $(OBJSDIR):
-	$(QUIET)$(MKDIR) $(MKDIRFLAGS) $(OBJSDIR)
+	$(QUIET)$(MKDIR) $(OBJSDIR)
 
 $(OBJSDIR)%.o: $(SRCSDIR)$(MEMORY_SRCSDIR)%.c
 	$(QUIET)$(ECHO) "CC	$(MEMORY_SRCSDIR)$(notdir $@)"
@@ -182,14 +184,14 @@ $(OBJSDIR)%.o: $(SRCSDIR)$(STRING_SRCSDIR)%.c
 
 clean:
 	$(QUIET)$(ECHO) "RM	$(OBJSDIR)"
-	$(QUIET)$(RM) $(RMFLAGS) $(OBJS)
+	$(QUIET)$(RM) $(OBJS)
 	$(QUIET)if [ -d "$(OBJSDIR)" ]; then \
 		$(RMDIR) $(OBJSDIR); \
 	fi
 
 fclean: clean
 	$(QUIET)$(ECHO) "RM	$(NAME)"
-	$(QUIET)$(RM) $(RMFLAGS) $(NAME)
+	$(QUIET)$(RM) $(NAME)
 
 re: fclean all
 
