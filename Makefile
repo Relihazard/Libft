@@ -6,7 +6,7 @@
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#              #
-#    Updated: 2018/01/12 16:14:52 by relihazar        ###   ########.fr        #
+#    Updated: 2018/01/12 16:29:35 by relihazar        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ RANLIB			:= ranlib
 MKDIR			:= mkdir
 MKDIRFLAGS		:= -p
 RM				:= /bin/rm
-RMFLAGS			:= -rf
+RMFLAGS			:= -f
 RMDIR			:= rmdir
 ECHO			:= echo
 QUIET			:= @
