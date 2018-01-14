@@ -6,7 +6,7 @@
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#              #
-#    Updated: 2018/01/12 17:08:04 by agrossma         ###   ########.fr        #
+#    Updated: 2018/01/14 21:00:36 by agrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SHELL			:= /bin/bash
 
 NAME			:= libft.a
 CC				:= gcc
-CFLAGS			:= -Wall -Wextra -Werror
+CFLAGS			+= -Wall -Wextra -Werror
 AR				:= ar
 ARFLAGS			:= -rcs
 MKDIR			:= mkdir -p
@@ -29,10 +29,11 @@ QUIET			:= @
 
 #### Start of files definition section ####
 
-INCLUDESDIR		:= includes/
-OBJSDIR			:= objs/
-SRCSDIR			:= srcs/
-MEMORY_SRCSDIR	:= memory/
+_INCLUDES		:= includes/
+CFLAGS			+= -I$(_INCLUDES)
+_OBJS			:= objs/
+_SRCS			:= srcs/
+_MEMORY_SRCS	:= memory/
 MEMORY_SRCS		:= \
 	ft_bzero.c \
 	ft_memalloc.c \
@@ -43,8 +44,8 @@ MEMORY_SRCS		:= \
 	ft_memdel.c \
 	ft_memmove.c \
 	ft_memset.c
-OBJS			+= $(addprefix $(OBJSDIR), $(MEMORY_SRCS:.c=.o))
-FT_PRINTF_SRCSDIR	:= ft_printf/
+OBJS			+= $(addprefix $(_OBJS), $(MEMORY_SRCS:.c=.o))
+_FT_PRINTF_SRCS	:= ft_printf/
 FT_PRINTF_SRCS	:= \
 	ft_printf.c \
 	format.c \
@@ -68,8 +69,8 @@ FT_PRINTF_SRCS	:= \
 	conv_octal.c \
 	conv_unsigned.c \
 	conv_hex.c
-OBJS			+= $(addprefix $(OBJSDIR), $(FT_PRINTF_SRCS:.c=.o))
-LIST_SRCSDIR	:= list/
+OBJS			+= $(addprefix $(_OBJS), $(FT_PRINTF_SRCS:.c=.o))
+_LIST_SRCS	:= list/
 LIST_SRCS		:= \
 	ft_lstadd.c \
 	ft_lstdel.c \
@@ -78,8 +79,8 @@ LIST_SRCS		:= \
 	ft_lstiter.c \
 	ft_lstmap.c \
 	ft_lstnew.c
-OBJS			+= $(addprefix $(OBJSDIR), $(LIST_SRCS:.c=.o))
-PRINT_SRCSDIR	:= print/
+OBJS			+= $(addprefix $(_OBJS), $(LIST_SRCS:.c=.o))
+_PRINT_SRCS	:= print/
 PRINT_SRCS		:= \
 	ft_putaddr.c \
 	ft_putaddr_fd.c \
@@ -91,8 +92,8 @@ PRINT_SRCS		:= \
 	ft_putnbr_fd.c \
 	ft_putstr.c \
 	ft_putstr_fd.c
-OBJS			+= $(addprefix $(OBJSDIR), $(PRINT_SRCS:.c=.o))
-STRING_SRCSDIR	:= string/
+OBJS			+= $(addprefix $(_OBJS), $(PRINT_SRCS:.c=.o))
+_STRING_SRCS	:= string/
 STRING_SRCS		:= \
 	ft_atoi.c \
 	ft_atoi_base.c \
@@ -138,7 +139,7 @@ STRING_SRCS		:= \
 	ft_strtrim.c \
 	ft_tolower.c \
 	ft_toupper.c
-OBJS			+= $(addprefix $(OBJSDIR), $(STRING_SRCS:.c=.o))
+OBJS			+= $(addprefix $(_OBJS), $(STRING_SRCS:.c=.o))
 
 #### End of files definition section ####
 
@@ -155,38 +156,38 @@ LDLIBS			:=
 
 all: $(NAME)
 
-$(NAME): $(OBJSDIR) $(OBJS)
+$(NAME): $(_OBJS) $(OBJS)
 	$(QUIET)$(ECHO) "AR	$@"
 	$(QUIET)$(AR) $(ARFLAGS) $@ $(OBJS)
 
-$(OBJSDIR):
-	$(QUIET)$(MKDIR) $(OBJSDIR)
+$(_OBJS):
+	$(QUIET)$(MKDIR) $(_OBJS)
 
-$(OBJSDIR)%.o: $(SRCSDIR)$(MEMORY_SRCSDIR)%.c
-	$(QUIET)$(ECHO) "CC	$(MEMORY_SRCSDIR)$(notdir $@)"
-	$(QUIET)$(CC) $(CFLAGS) -I$(INCLUDESDIR) -c $< -o $@
+$(_OBJS)%.o: $(_SRCS)$(_MEMORY_SRCS)%.c
+	$(QUIET)$(ECHO) "CC	$(_MEMORY_SRCS)$(notdir $@)"
+	$(QUIET)$(CC) $(CFLAGS) -c $< -o $@
 
-$(OBJSDIR)%.o: $(SRCSDIR)$(FT_PRINTF_SRCSDIR)%.c
-	$(QUIET)$(ECHO) "CC	$(FT_PRINTF_SRCSDIR)$(notdir $@)"
-	$(QUIET)$(CC) $(CFLAGS) -I$(INCLUDESDIR) -c $< -o $@
+$(_OBJS)%.o: $(_SRCS)$(_FT_PRINTF_SRCS)%.c
+	$(QUIET)$(ECHO) "CC	$(_FT_PRINTF_SRCS)$(notdir $@)"
+	$(QUIET)$(CC) $(CFLAGS) -c $< -o $@
 
-$(OBJSDIR)%.o: $(SRCSDIR)$(LIST_SRCSDIR)%.c
-	$(QUIET)$(ECHO) "CC	$(LIST_SRCSDIR)$(notdir $@)"
-	$(QUIET)$(CC) $(CFLAGS) -I$(INCLUDESDIR) -c $< -o $@
+$(_OBJS)%.o: $(_SRCS)$(_LIST_SRCS)%.c
+	$(QUIET)$(ECHO) "CC	$(_LIST_SRCS)$(notdir $@)"
+	$(QUIET)$(CC) $(CFLAGS) -c $< -o $@
 
-$(OBJSDIR)%.o: $(SRCSDIR)$(PRINT_SRCSDIR)%.c
-	$(QUIET)$(ECHO) "CC	$(PRINT_SRCSDIR)$(notdir $@)"
-	$(QUIET)$(CC) $(CFLAGS) -I$(INCLUDESDIR) -c $< -o $@
+$(_OBJS)%.o: $(_SRCS)$(_PRINT_SRCS)%.c
+	$(QUIET)$(ECHO) "CC	$(_PRINT_SRCS)$(notdir $@)"
+	$(QUIET)$(CC) $(CFLAGS) -c $< -o $@
 
-$(OBJSDIR)%.o: $(SRCSDIR)$(STRING_SRCSDIR)%.c
-	$(QUIET)$(ECHO) "CC	$(STRING_SRCSDIR)$(notdir $@)"
-	$(QUIET)$(CC) $(CFLAGS) -I$(INCLUDESDIR) -c $< -o $@
+$(_OBJS)%.o: $(_SRCS)$(_STRING_SRCS)%.c
+	$(QUIET)$(ECHO) "CC	$(_STRING_SRCS)$(notdir $@)"
+	$(QUIET)$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(QUIET)$(ECHO) "RM	$(OBJSDIR)"
+	$(QUIET)$(ECHO) "RM	$(_OBJS)"
 	$(QUIET)$(RM) $(OBJS)
-	$(QUIET)if [ -d "$(OBJSDIR)" ]; then \
-		$(RMDIR) $(OBJSDIR); \
+	$(QUIET)if [ -d "$(_OBJS)" ]; then \
+		$(RMDIR) $(_OBJS); \
 	fi
 
 fclean: clean
