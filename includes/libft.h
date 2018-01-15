@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#             */
-/*   Updated: 2018/01/08 13:32:03 by agrossma         ###   ########.fr       */
+/*   Updated: 2018/01/15 15:51:12 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,7 @@ void			ft_strdel(char **as);
 void			ft_striter(char *s, void (*f)(char *));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 int				ft_atoi_base(const char *str, int base);
+int				ft_isnumber(const char *str);
 
 /*
 ** Functions to manipulate a linked list
