@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/19 15:43:47 by agrossma          #+#    #+#             */
-/*   Updated: 2018/01/08 13:31:53 by agrossma         ###   ########.fr       */
+/*   Updated: 2018/01/15 14:00:48 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	ft_getopt_arg_required(char *place, const char *optstring,
 	if (g_opterr)
 	{
 		ft_putstr_fd(progname, 2);
-		ft_putstr_fd(": option requires an argument -- ",2);
+		ft_putstr_fd(": option requires an argument -- ", 2);
 		ft_putendl_fd((const char *)&g_optopt, 2);
 	}
 	return ((int)'?');
