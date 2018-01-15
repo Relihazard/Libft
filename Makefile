@@ -6,7 +6,7 @@
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#              #
-#    Updated: 2018/01/14 21:00:36 by agrossma         ###   ########.fr        #
+#    Updated: 2018/01/15 15:50:01 by agrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -138,7 +138,8 @@ STRING_SRCS		:= \
 	ft_strsub.c \
 	ft_strtrim.c \
 	ft_tolower.c \
-	ft_toupper.c
+	ft_toupper.c \
+	ft_isnumber.c
 OBJS			+= $(addprefix $(_OBJS), $(STRING_SRCS:.c=.o))
 
 #### End of files definition section ####
