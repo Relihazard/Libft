@@ -6,7 +6,7 @@
 /*   By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 16:51:02 by agrossma          #+#    #+#             */
-/*   Updated: 2018/01/25 14:20:06 by agrossma         ###   ########.fr       */
+/*   Updated: 2018/01/25 14:54:16 by agrossma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,8 @@ static size_t	ft_word_len(char *s, char c)
 	size_t	len;
 
 	len = 0;
-	while (*s != c && *s)
-	{
+	while (s[len] != c && s[len])
 		len++;
-		s++;
-	}
 	return (len);
 }
 
