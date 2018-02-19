@@ -6,7 +6,7 @@
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#              #
-#    Updated: 2018/01/26 12:57:12 by agrossma         ###   ########.fr        #
+#    Updated: 2018/02/19 18:06:27 by agrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ NAME			:= libft.a
 CC				:= gcc
 CFLAGS			+= -Wall -Wextra -Werror
 AR				:= ar
-ARFLAGS			:= -rcs
+ARFLAGS			:= -rc
+RANLIB			:= ranlib
 MKDIR			:= mkdir -p
 RM				:= rm -f
 RMDIR			:= rmdir
@@ -160,6 +161,7 @@ all: $(NAME)
 $(NAME): $(_OBJS) $(OBJS)
 	$(QUIET)$(ECHO) "AR	$@"
 	$(QUIET)$(AR) $(ARFLAGS) $@ $(OBJS)
+	$(QUIET)$(RANLIB) $@
 
 $(_OBJS):
 	$(QUIET)$(MKDIR) $(_OBJS)
