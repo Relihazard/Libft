@@ -45,7 +45,7 @@ static int		ft_printf_rec(const char *format, va_list *ap, size_t nbr_chr)
 	ssize_t		format_len;
 
 	next_arg = ft_strchr(format, '%');
-	if (format == '\0')
+	if (*format == '\0')
 		return (nbr_chr);
 	if (next_arg == NULL)
 	{
