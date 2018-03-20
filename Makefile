@@ -6,7 +6,7 @@
 #    By: agrossma <agrossma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 16:51:03 by agrossma          #+#    #+#              #
-#    Updated: 2018/02/19 18:06:27 by agrossma         ###   ########.fr        #
+#    Updated: 2018/03/20 19:26:01 by agrossma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SHELL			:= /bin/bash
 
 NAME			:= libft.a
 CC				:= gcc
-CFLAGS			+= -Wall -Wextra -Werror
+CFLAGS			+= -Wall -Wextra -Werror -g3
 AR				:= ar
 ARFLAGS			:= -rc
 RANLIB			:= ranlib
@@ -110,7 +110,7 @@ STRING_SRCS		:= \
 	ft_isspace.c \
 	ft_isupper.c \
 	ft_itoa.c \
-	ft_readline.c \
+	get_next_line.c \
 	ft_strcat.c \
 	ft_strchr.c \
 	ft_strclr.c \
